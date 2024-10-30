@@ -25,13 +25,13 @@ const CodeBlocks = ({
           <CTAButton active={ctabtn1.active} linkto={ctabtn1.linkto}>
             {/* yellow button text and arrow */}
             <div className="flex gap-2 items-center">
-              {ctabtn1.text}
+              {ctabtn1.btnText}
               <FaArrowRight />
             </div>
           </CTAButton>
           <CTAButton active={ctabtn2.active} linkto={ctabtn2.linkto}>
             {/* yellow button text and arrow */}
-            {ctabtn2.text}
+            {ctabtn2.btnText}
           </CTAButton>
         </div>
       </div>
