@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { FaArrowRight } from "react-icons/fa";
 import HighlightText from "../components/core/HomePage/HighlightText";
 import CTAButton from "../components/core/HomePage/Button";
+import Banner from "../assets/Images/banner.mp4";
 const Home = () => {
   return (
     <div>
@@ -33,8 +34,26 @@ const Home = () => {
           instructors.
         </div>
         <div className="flex flex-row gap-7 mt-8 ">
-          <CTAButton active={true} linkto={"/signup"}>Learn More</CTAButton>
-          <CTAButton active={false} linkto={"/login"}>Book a Demo</CTAButton>
+          <CTAButton active={true} linkto={"/signup"}>
+            Learn More
+          </CTAButton>
+          <CTAButton active={false} linkto={"/login"}>
+            Book a Demo
+          </CTAButton>
+        </div>
+        {/* Video Div */}
+        <div className="shadow-blue-200 mx-3 my-12">
+          <video muted loop autoPlay>
+            <source src={Banner} type="video/mp4"></source>
+          </video>
+        </div>
+        {/* CODE SECTION 1 */}
+        {/* side by side rkhe hai so? One big div: side by side they are kept in row */}
+        {/* then left div flex-column then for buttons flex row */}
+        {/* then right div new part: */}
+        <div>
+          {/* we will send the data as props in this. */}
+          <CodeBlocks></CodeBlocks>
         </div>
       </div>
       {/* Section 2 */}
