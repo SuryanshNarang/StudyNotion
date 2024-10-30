@@ -5,6 +5,8 @@ import HighlightText from "../components/core/HomePage/HighlightText";
 import CTAButton from "../components/core/HomePage/Button";
 import Banner from "../assets/Images/banner.mp4";
 import CodeBlocks from "../components/core/HomePage/CodeBlocks";
+import TimelineSection from "../components/core/HomePage/TimelineSection";
+import LearningLanguageSection from "../components/core/HomePage/LearningLanguageSection";
 const Home = () => {
   return (
     <div>
@@ -131,6 +133,7 @@ const Home = () => {
       {/* Section 2 */}
 
       <div className="bg-pure-greys-5 text-richblack-700">
+        {/* 1st container of section 2 */}
         <div className="homepage_bg h-[333px]">
           <div className="w-11/12 max-w-maxContent flex flex-col items-center justify-between gap-5 mx-auto">
             <div className="h=[150px]"></div>
@@ -147,7 +150,7 @@ const Home = () => {
             </div>
           </div>
         </div>
-        {/* next container of section 2 */}
+        {/* Second container of section 2 */}
         <div className="mx-auto w-11/12 max-w-maxContent flex flex-col items-center justify-between gap-7">
           {/* Parent container for Get the skills you need for a job in demand */}
           <div className="flex flex-row gap-5 mb-10 mt-[95px]">
@@ -166,6 +169,10 @@ const Home = () => {
               </CTAButton>
             </div>
           </div>
+          {/* Thirds container of section 2 */}
+ 
+          <TimelineSection />
+          <LearningLanguageSection />
         </div>
       </div>
       {/* Section 3 */}
