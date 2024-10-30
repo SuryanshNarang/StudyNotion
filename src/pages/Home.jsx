@@ -65,22 +65,28 @@ const Home = () => {
             subheading={
               "Our courses are designed and taught by industry experts who have years of experience in coding and are passionate about sharing their knowledge with you."
             }
-            ctabtn1={{btnText:"try it yourself", linkto:"/signup", active:true,}}
-            ctabtn2={{btnText:"learn more", linkto:"/login", active:false,}}
-            codeblock={`<!Doctype html>\n
-              <html>\n
-              <head>\n
+            ctabtn1={{
+              btnText: "try it yourself",
+              linkto: "/signup",
+              active: true,
+            }}
+            ctabtn2={{ btnText: "learn more", linkto: "/login", active: false }}
+            codeblock={`<!DOCTYPE html>
+            <html>
+              <head>
                   <title>My First HTML Page</title>
-              </head>\n
-              <body>\n
-                  <h1>My First Heading</h1>\n
-                  <p>My first paragraph.</p>\n
+              </head>
+              <body>
+                  <h1>My First Heading</h1>
+                  <p>My first paragraph.</p>
               </body>
+              </html>
               `}
-              codeColor={"text-yellow-25"}
-          > </CodeBlocks>
+            codeColor={"text-yellow-25"}
+          >
+            {" "}
+          </CodeBlocks>
         </div>
-       
       </div>
       {/* Section 2 */}
       {/* Section 3 */}
