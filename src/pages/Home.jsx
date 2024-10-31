@@ -7,6 +7,7 @@ import Banner from "../assets/Images/banner.mp4";
 import CodeBlocks from "../components/core/HomePage/CodeBlocks";
 import TimelineSection from "../components/core/HomePage/TimelineSection";
 import LearningLanguageSection from "../components/core/HomePage/LearningLanguageSection";
+import InstructorSection from "../components/core/HomePage/InstructorSection";
 const Home = () => {
   return (
     <div>
@@ -131,7 +132,6 @@ const Home = () => {
         </div>
       </div>
       {/* Section 2 */}
-
       <div className="bg-pure-greys-5 text-richblack-700">
         {/* 1st container of section 2 */}
         <div className="homepage_bg h-[333px]">
@@ -170,12 +170,20 @@ const Home = () => {
             </div>
           </div>
           {/* Thirds container of section 2 */}
- 
+
           <TimelineSection />
           <LearningLanguageSection />
         </div>
       </div>
       {/* Section 3 */}
+      <div className="w-11/12 mx-auto max-w-maxContent flex flex-col items-center justify-between gap-8 first-letter:bg-richblack-900">
+        {/* Instructor section */}
+        <InstructorSection />
+        <h2 className="text-center text-4xl font-semibold mt-10">
+          review from other learners
+        </h2>
+        {/* Review Slider */}
+      </div>
       {/* Footer */}
     </div>
   );
