@@ -31,15 +31,15 @@ const timeline = [
 ];
 const TimelineSection = () => {
   return (
-    <div className="flex flex-row gap-15 items-center">
+    <div className="flex flex-col lg:flex-row gap-20 mb-20 items-center">
       {/* left box  */}
-      <div className="w-[45%] flex flex-col gap-5">
+      <div className="lg:w-[45%] flex flex-col gap-14 lg:gap-3">
         {timeline.map((element, index) => {
           return (
             // left m logo and right box has heading and sub heading
-            <div className="flex flex-row gap-6 " key={index}>
+            <div className="flex flex-col lg:gap-3" key={index}>
               {/* logo div */}
-              <div className="w-[50px] h-[50px] bg-white flex items-center">
+              <div className="w-[52px] h-[52px] bg-white rounded-full flex justify-center items-center shadow-[#00000012] shadow-[0_0_62px_0]">
                 <img src={element.Logo} alt="" />
               </div>
               {/* right container */}
@@ -52,7 +52,7 @@ const TimelineSection = () => {
         })}
       </div>
       {/* Right part */}
-      <div className="relative shadow-blue-200 ">
+      <div className="relative w-fit h-fit shadow-blue-200 shadow-[0px_0px_30px_0px]">
         <img src={timelineImage} alt="timelineImage" />
         {/* overlapping section green */}
         <div className="absolute bg-caribbeangreen-700 flex flex-row text-white uppercase py-7 left-[50%] translate-x-[-50%] translate-y-[-50%] ">

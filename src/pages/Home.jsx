@@ -58,7 +58,7 @@ const Home = () => {
         <div>
           {/* we will send the data as props in this. */}
           <CodeBlocks
-            position={"lg:flex-row"}
+            position={"lg:flex-row" }
             heading={
               <div className="text-4xl font-bold">
                 Unlock your <HighlightText text={"coding potential"} />
@@ -151,17 +151,17 @@ const Home = () => {
           </div>
         </div>
         {/* Second container of section 2 */}
-        <div className="mx-auto w-11/12 max-w-maxContent flex flex-col items-center justify-between gap-7">
+        <div className="mx-auto w-11/12 max-w-maxContent flex flex-col  items-center justify-between gap-7">
           {/* Parent container for Get the skills you need for a job in demand */}
-          <div className="flex flex-row gap-5 mb-10 mt-[95px]">
+          <div className="flex  flex-col lg:flex-row gap-5 mb-10 mt-[95px]  items-center">
             {/* left container */}
-            <div className="text-4xl font-semibold w-[45%]">
+            <div className="text-4xl font-semibold lg:w-[45%] ">
               Get the skills you need for a
               <HighlightText text={"Job that is in demand"} />
             </div>
-            <div className=" flex flex-col gap-10 w-[40%] items-start ">
+            <div className=" flex flex-col lg:flex-col gap-10 lg:w-[40%] items-start ">
               {/* text div */}
-              <div className="text-[16px]">
+              <div className="text-[16px] ">
                 The modern studynotion is the dictates its own terms
               </div>
               <CTAButton active={true} linkto={"/signup"}>
