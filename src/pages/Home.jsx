@@ -58,7 +58,7 @@ const Home = () => {
         <div>
           {/* we will send the data as props in this. */}
           <CodeBlocks
-            position={"lg:flex-row" }
+            position={"lg:flex-row"}
             heading={
               <div className="text-4xl font-bold">
                 Unlock your <HighlightText text={"coding potential"} />
@@ -130,6 +130,7 @@ const Home = () => {
             {" "}
           </CodeBlocks>
         </div>
+        <ExploreMore />
       </div>
       {/* Section 2 */}
       <div className="bg-pure-greys-5 text-richblack-700">
