@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { HomePageExplore } from "../../../data/homepage-explore";
 import HighlightText from "../HomePage/HighlightText";
+import CourseCard from "./CourseCard";
 const tabsName = [
   "Free",
   "New to coding",
@@ -10,8 +11,8 @@ const tabsName = [
 ];
 
 const ExploreMore = () => {
-  const [currentTab, setCurrentTab] = useState(tabsName[0]);
-  const [courses, setCourses] = useState(HomePageExplore[0].courses);
+  const [currentTab, setCurrentTab] = useState(tabsName[0]); //tab selection initially pehla tab
+  const [courses, setCourses] = useState(HomePageExplore[0].courses); //course selection
   const [currentCard, setCurrentCard] = useState(
     HomePageExplore[0].courses[0].heading
   );
@@ -29,11 +30,11 @@ const ExploreMore = () => {
         Unlock the
         <HighlightText text={"Power of code"} />
       </div>
-      <p className="text-center text-richblack-300 text-[16px] font-semibold mt-1 ">
+      <p className="text-center text-richblack-300 text-[16px] font-semibold mt-3 ">
         Learn to build anything you can imagine
       </p>
       {/* TAB COMPONENT */}
-      <div className="flex flex-row bg-richblack-800 rounded-full mb-5 mt-5 py-1 border-richblack-100 px-1">
+      <div className="flex flex-row bg-richblack-800 rounded-full mt-5 py-1 border-richblack-100 px-1">
         {tabsName.map((element, index) => {
           return (
             <div
@@ -48,6 +49,21 @@ const ExploreMore = () => {
             >
               {element}
             </div>
+          );
+        })}
+      </div>
+
+      <div className="lg:h-[60px]"></div>
+      {/* CARDS GROUP */}
+      <div className="flex flex-row">
+        {courses.map((element, index) => {
+          return (
+            <CourseCard
+              key={index}
+              cardData={element}
+              currentCard={currentCard}
+              setCurrentCard={setCurrentCard}
+            />
           );
         })}
       </div>
