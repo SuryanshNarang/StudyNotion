@@ -10,7 +10,7 @@ const CourseCard = ({ cardData, currentCard, setCurrentCard }) => {
   return (
     <div
       onClick={handleClick}
-      className={`cursor-pointer flex flex-col justify-between w-60 p-4 m-2 rounded-lg transition-colors duration-300 
+      className={`cursor-pointer flex flex-col justify-between lg:w-60 p-4 m-2 rounded-lg transition-colors duration-300 
                   ${isActive ? 'bg-white text-black border-l-4 border-yellow-500 shadow-lg' : 'bg-gray-900 text-gray-400'}`}
     >
       <h3 className="text-lg font-bold">{cardData.heading}</h3>

@@ -24,7 +24,7 @@ const ExploreMore = () => {
     setCurrentCard(result[0].courses[0].heading);
   };
   return (
-    <div>
+    <div className="">
       {/* heading div */}
       <div className="text-4xl font-semibold  text-center my-10">
         Unlock the
@@ -55,7 +55,7 @@ const ExploreMore = () => {
 
       <div className="lg:h-[60px]"></div>
       {/* CARDS GROUP */}
-      <div className="flex flex-row">
+      <div className="flex lg:flex-row flex-col">
         {courses.map((element, index) => {
           return (
             <CourseCard
