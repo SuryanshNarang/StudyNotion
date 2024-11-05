@@ -10,9 +10,11 @@ import LearningLanguageSection from "../components/core/HomePage/LearningLanguag
 import InstructorSection from "../components/core/HomePage/InstructorSection";
 import ExploreMore from "../components/core/HomePage/ExploreMore";
 import Footer from "../components/common/Footer";
+import Navbar from "../components/common/Navbar";
 const Home = () => {
   return (
     <div>
+      <Navbar/>
       {/* Section 1 */}
       <div className="relative mx-auto flex flex-col w-11/12 items-center text-white justify-between max-w-maxContent">
         <Link to={"/signup"}>
