@@ -15,3 +15,4 @@ const authSlice= createSlice({
 });
 export const {setToken}= authSlice.actions;
 export default authSlice.reducer;
+// syntax for rest of the slices will also remain same.
