@@ -7,6 +7,8 @@ import { AiOutlineShoppingCart } from "react-icons/ai";
 import ProfileDropDown from "../core/Auth/ProfileDropDown";
 import { apiConnector } from "../../services/apiconnector";
 import { categories } from "../../services/apis";
+import { useState, useEffect } from "react";
+import { IoIosArrowDropdown } from "react-icons/io";
 const Navbar = () => {
   const location = useLocation();
   // after slices the below code is to fetch those states
@@ -15,15 +17,20 @@ const Navbar = () => {
   const { user } = useSelector((state) => state.profile);
   const { totalItems } = useSelector((state) => state.cart);
   // API call krenge for the catalog in navbar
+
   const [subLinks, setSubLinks] = useState([]);
+  const fetchSubLinks = async () => {
+    try {
+      const result = await apiConnector("GET", categories.CATEGORIES_API);
+      console.log("Printing Sublinks:", result);
+      setSubLinks(result.data.data);
+    } catch (e) {
+      console.log("Could not fetch categoryList");
+    }
+  };
+
   useEffect(() => {
-    async () => {
-      try {
-        const result = apiConnector("GET", categories.CATEGORIES_API);
-      } catch (e) {
-        console.error("Could not fetch categoryList");
-      }
-    };
+    fetchSubLinks();
   }, []);
 
   // Function to match route
@@ -44,7 +51,16 @@ const Navbar = () => {
             {NavbarLinks.map((link, index) => (
               <li key={index}>
                 {link.title === "Catalog" ? (
-                  <div></div>
+                  <div className=" relative flex items-center gap-2 group">
+                    {/* group hover means whenver i will hover on the above div below div will be visible */}
+                    <p>{link.title}</p>
+                    <IoIosArrowDropdown />
+                    {/* hover dropdown */}
+                    <div className="invisible absolute left-[-50%] top-[50%] translate-x-[-25%] translate-y-[80%] flex flex-col rounded-md bg-richblack-5 p-4 text-richblack-900 opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100 w-[300px]">
+                      {/* diamond shaped div */}
+                      <div className="absolute left-[50%] top-0 h-6 w-6 rotate-45 rounded bg-richblack-5 translate-y-[-50%] translate-x-[80%]"></div>
+                    </div>
+                  </div>
                 ) : (
                   <Link to={link.path}>
                     <p
@@ -76,7 +92,7 @@ const Navbar = () => {
             user is present if not logged in then there is no value in user o/w user will have some value
           */}
           {/* instead of adding instructor directly as a string here a constant file must have been there. */}
-          {user && user?.accountType != "Instructor" && (
+          {user && user?.accountType !== "Instructor" && (
             // since we want the number to overlap on the cart icon we set the property to relative
             <Link to="/dashboard/cart" className="relative">
               <AiOutlineShoppingCart />
