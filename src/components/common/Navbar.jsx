@@ -5,6 +5,8 @@ import { NavbarLinks } from "../../data/navbar-links";
 import { useSelector } from "react-redux";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import ProfileDropDown from "../core/Auth/ProfileDropDown";
+import { apiConnector } from "../../services/apiconnector";
+import { categories } from "../../services/apis";
 const Navbar = () => {
   const location = useLocation();
   // after slices the below code is to fetch those states
@@ -12,6 +14,17 @@ const Navbar = () => {
   const { token } = useSelector((state) => state.auth);
   const { user } = useSelector((state) => state.profile);
   const { totalItems } = useSelector((state) => state.cart);
+  // API call krenge for the catalog in navbar
+  const [subLinks, setSubLinks] = useState([]);
+  useEffect(() => {
+    async () => {
+      try {
+        const result = apiConnector("GET", categories.CATEGORIES_API);
+      } catch (e) {
+        console.error("Could not fetch categoryList");
+      }
+    };
+  }, []);
 
   // Function to match route
   const matchRoute = (route) => {
@@ -31,9 +44,7 @@ const Navbar = () => {
             {NavbarLinks.map((link, index) => (
               <li key={index}>
                 {link.title === "Catalog" ? (
-                  <div>
-                    
-                  </div>
+                  <div></div>
                 ) : (
                   <Link to={link.path}>
                     <p
