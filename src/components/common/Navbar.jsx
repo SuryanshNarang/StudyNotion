@@ -31,7 +31,9 @@ const Navbar = () => {
             {NavbarLinks.map((link, index) => (
               <li key={index}>
                 {link.title === "Catalog" ? (
-                  <div></div>
+                  <div>
+                    
+                  </div>
                 ) : (
                   <Link to={link.path}>
                     <p
