@@ -9,6 +9,16 @@ import { apiConnector } from "../../services/apiconnector";
 import { categories } from "../../services/apis";
 import { useState, useEffect } from "react";
 import { IoIosArrowDropdown } from "react-icons/io";
+const subLinks= [
+  {
+    title:"python",
+    link:"/catalog/python"
+  },
+  {
+    title:"web dev",
+    link:"/catalog/web-development"
+  }
+]
 const Navbar = () => {
   const location = useLocation();
   // after slices the below code is to fetch those states
@@ -60,6 +70,15 @@ const Navbar = () => {
                       {/* diamond shaped div */}
                       <div className="absolute left-[50%] top-0 h-6 w-6 rotate-45 rounded bg-richblack-5 translate-y-[-50%] translate-x-[80%]"></div>
                     </div>
+                    {
+                      subLinks.length ? ({
+                        subLinks.map((subLink,index)=>{
+                          <Link to={`${subLink.link}`} key={index}>
+                            <p>{subLink.title}</p>
+                          </Link>
+                        })
+                      }) : (<div></div>)
+                    }
                   </div>
                 ) : (
                   <Link to={link.path}>
