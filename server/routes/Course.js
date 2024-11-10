@@ -40,7 +40,7 @@ const {
 } = require("../controllers/Category");
 //CATEGORY ROUTES
 router.post("/create-category", auth, createCategory);
-router.get("/category-details", auth, showAllCategory);
+router.get("/showAllCategory", auth, showAllCategory);
 router.get("/getCategoryPageDetails", auth, categoryPageDetails);
 
 //tested
